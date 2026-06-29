@@ -1,0 +1,5 @@
+# Ignore generated and dependency output.
+.next/
+node_modules/
+coverage/
+dist/

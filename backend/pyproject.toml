@@ -1,0 +1,17 @@
+# Python project configuration for the JARVIS backend.
+[project]
+name = "jarvis-backend"
+version = "0.1.0"
+description = "FastAPI backend for the JARVIS AI Operating System."
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]

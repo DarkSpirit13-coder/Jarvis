@@ -1,0 +1,1 @@
+"""Keeps the Alembic versions directory available for generated migrations."""
