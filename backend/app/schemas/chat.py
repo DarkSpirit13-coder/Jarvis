@@ -16,6 +16,12 @@ class ChatResponse(BaseModel):
 
     conversation_id: str
     response: str
+    plan: dict | None = None
+    tool_results: list[dict] = Field(default_factory=list)
+    execution_result: dict | None = None
+    relevant_memories: list[str] = Field(default_factory=list)
+    history: list[dict] = Field(default_factory=list)
+    usage: dict[str, int] = Field(default_factory=dict)
 
 
 class ToolMetadata(BaseModel):

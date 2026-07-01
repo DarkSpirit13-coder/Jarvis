@@ -24,8 +24,8 @@ async def chat(
     manager: ConversationManagerDependency,
 ) -> ChatResponse:
     """Run a complete chat turn and return the final assistant response."""
-    response = await manager.respond(payload.user_id, payload.conversation_id, payload.message)
-    return ChatResponse(conversation_id=payload.conversation_id, response=response)
+    result = await manager.handle_message(payload.user_id, payload.conversation_id, payload.message)
+    return ChatResponse(**result.model_dump())
 
 
 @router.post("/chat/stream")
